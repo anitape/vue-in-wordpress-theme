@@ -1,0 +1,296 @@
+/*
+Theme Name: Vuewithbundler
+Theme URI: http://wordpress.org/themes/twentythirteen
+Author: anitape
+Author URI: http://wordpress.org/
+Description: The 2013 theme for WordPress takes us back to the blog, featuring a full range of post formats, each displayed beautifully in their own unique way. Design details abound, starting with a vibrant color scheme and matching header images, beautiful typography and icons, and a flexible layout that looks great on any device, big or small.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: black, brown, orange, tan, white, yellow, light, one-column, two-columns, right-sidebar, flexible-width, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Text Domain: Vuewithbundler
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+:root {
+    --text-color: #3c434a;
+    --border-grey: #bbbbbb;
+    --theme-color: #eae3ea;
+    --link-color: #7b3f7b;
+}
+
+/*--------------------*/
+/* MAIN ELEMENTS */
+/*--------------------*/
+
+h1 {   
+    font-family: 'Oleo Script', cursive;
+    font-size: 100px;
+    color: #000000;
+    line-height: 70px;  
+}
+
+h2 {    
+    font-family: 'Lora', serif;
+    font-size: 67px;
+    color: var(--text-color);
+}
+
+h3 {    
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    color: var(--text-color);
+}
+
+h4 {    
+    font-family: 'Lora', serif;
+    font-size: 27px;
+    color: var(--text-color);
+}
+
+h5 {    
+    font-family: 'Lora', serif;
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+body {
+    font-family: 'PT Serif', serif;
+}
+
+p {
+    font-size: 17px;
+}
+
+/*--------------------*/
+/* MAIN COMPONENTS */
+/*--------------------*/
+
+.team-container {
+    margin: 4% 6%;
+}
+
+.top-bottom-margins {
+    margin: 4% 0%;
+}
+
+.subpage-header {
+    margin-bottom: 40px;
+}
+
+.recipe-image {
+    height: 320px;
+    object-fit: cover;
+}
+
+.highlight-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-color);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.line-separator {
+    box-sizing: content-box;
+    display: inline-block;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+    vertical-align: middle;
+    width: 2em;
+    color: #000000;
+}
+
+.line-separator:after {
+    background: var(--text-color);
+    content: "";
+    display: block;
+    height: 0.085em;
+    width: 100%;
+}
+
+.recipe-link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--link-color);
+    text-transform: uppercase;
+}
+
+.recipe-link:hover {
+    text-decoration: none;
+    color: var(--link-color);
+    border-bottom: 3px solid var(--link-color);
+    
+}
+
+/*--------------------*/
+/* MENU HEADER */
+/*--------------------*/
+
+.header-main {
+    background-color: var(--theme-color);
+    padding-bottom: 60px;
+}
+
+.header-title {
+    margin-top: 50px;
+}
+
+h2.secondary {
+    font-size: 14px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.header-some {
+    margin: 10px auto;
+}
+
+.nav {
+    padding-left:0;
+    margin-bottom:0;
+    list-style-type:none;
+}
+  
+.nav > li > a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    padding:10px 15px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
+
+.nav > li > a:hover, .nav > li > a:active {
+    text-decoration: underline var(--text-color) solid 2px;
+}
+
+i.fa {
+    color: var(--text-color);
+}
+
+.some {
+    display: flex;
+    flex-direction: row;
+}
+
+.some li {
+    padding:0px 10px;
+    line-height: 20px;
+    list-style-type:none;   
+}
+
+.link-no-decor {
+    color: black;
+}
+
+.link-no-decor:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/*--------------------*/
+/* FRONT PAGE */
+/*--------------------*/
+.service-info-image {
+    width: 600px;
+}
+
+.slide {
+}
+
+.sliderImage {
+    width: 100%;
+    object-fit: cover;
+    height: 600px;
+}
+
+/*--------------------*/
+/* FOOD PAGE */
+/*--------------------*/
+
+
+
+.food-recipe-images {
+    width: 200px;
+    object-fit: cover;
+    height: 600px;
+}
+
+
+/*--------------------*/
+/* DROPDOWNS */
+/*--------------------*/
+
+.food-dropdown-menu {
+    position: absolute;
+    background-color: white;
+    border: 1px solid lightgrey;
+    width: 100%;
+    padding: 10px 20px;
+    text-transform: capitalize;
+}
+
+.menu-dropdown {
+    margin: 50px;
+}
+
+.btn-category {
+    display: flex;
+    justify-content: space-between;
+    place-items: center;
+    border: 2px solid var(--border-grey);
+    background-color: white;
+    padding: 14px 53px 14px 20px;
+    font-size: 17px;
+    line-height: 27px;
+    width: 100%;
+}
+
+/*--------------------*/
+/* ARCHIVE */
+/*--------------------*/
+.margin-class {
+    margin-top: 15px;
+    margin-bottom: 45px;
+}
+
+/*--------------------*/
+/* MY RECIPES PAGE */
+/*--------------------*/
+
+.myrecipe-image {
+    max-width: 300px;
+}
+
+/*--------------------*/
+/* FOOTER */
+/*--------------------*/
+
+.footer-margin {
+    margin: 50px auto;
+}
+
+.footer-nav {
+    padding-left:0;
+    margin-bottom:0;
+    list-style-type: none;  
+}
+
+.footer-nav > li > a {
+    color: #000000;
+}
+
+.footer-nav > li > a:hover {
+    text-decoration: underline var(--text-color) solid 1.2px;
+}
