@@ -126,6 +126,11 @@ add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
     return $atts;
 }, 10, 3 );
 
+
+/* CREATE, READ and DELETE operations*/
+
+/* My Recipes */
+
 function add_to_my_recipes(WP_REST_Request $request_data) {
     $recipe_id = $request_data['recipeId'];
     $recipe_name = $request_data['recipeName'];
@@ -139,23 +144,23 @@ function add_to_my_recipes(WP_REST_Request $request_data) {
     'recipe_description' => $recipe_description, 'recipe_type' => $recipe_type, 'recipe_img' => $recipe_img ) );
 }
 
-function create_route() {
+function add_to_my_recipes_route() {
     register_rest_route( 'vuewithbundler/v1', '/myrecipes', array(
       'methods' => 'POST',
       'callback' => 'add_to_my_recipes',
     ) );
 }
 
-function get_my_recipes() {
+function get_my_recipes_num() {
     global $wpdb;
     $wpdb->get_results(" SELECT * FROM " . $wpdb->prefix . "myrecipes");
     return $wpdb->num_rows;
 }
 
-function get_my_recipes_route() {
+function get_my_recipes_num_route() {
     register_rest_route( 'vuewithbundler/v1', '/myrecipesare', array(
       'methods' => 'GET',
-      'callback' => 'get_my_recipes',
+      'callback' => 'get_my_recipes_num',
     ) );
 }
 
@@ -172,12 +177,111 @@ function get_my_food_recipes_route() {
     ) );
 }
 
-function delete_my_recipes() {
-
+function delete_my_recipe(WP_REST_Request $request_data) {
+    global $wpdb;
+    $id = $request_data['recipeId'];
+    $table_name = $wpdb->prefix . "myrecipes";
+    $wpdb->delete($table_name, ['recipe_id' => $id]);
+    //$wpdb->get_results(" DELETE FROM "  . $wpdb->prefix . " WHERE `wp_myrecipes`.`recipe_id` = " . $id);
+    echo "Id is " . $id;
 }
 
-add_action( 'rest_api_init',  'create_route');
-add_action( 'rest_api_init',  'get_my_recipes_route');
+function delete_my_recipe_route() {
+    register_rest_route( 'vuewithbundler/v1', '/myrecipe', array(
+      'methods' => 'POST',
+      'callback' => 'delete_my_recipe',
+    ) );
+}
+
+add_action( 'rest_api_init',  'add_to_my_recipes_route');
+add_action( 'rest_api_init',  'get_my_recipes_num_route');
 add_action( 'rest_api_init',  'get_my_food_recipes_route');
+add_action( 'rest_api_init',  'delete_my_recipe_route');
+
+/* My Drinks */
+function add_to_my_drinks(WP_REST_Request $request_data) {
+    $drink_id = $request_data['drinkId'];
+    $drink_name = $request_data['drinkName'];
+    $drink_link = $request_data['drinkLink'];
+    $drink_description = $request_data['drinkDescription'];
+    $drink_img = $request_data['drinkImg'];    
+    global $wpdb;
+    $table_name = $wpdb->prefix . "mydrinks";
+    $wpdb->insert($table_name, array('drink_id' => $drink_id, 'drink_name' => $drink_name, 'drink_link' => $drink_link, 
+    'drink_description' => $drink_description, 'drink_img' => $drink_img ) );
+}
+
+function add_to_my_drinks_route() {
+    register_rest_route( 'vuewithbundler/v1', '/mydrinks', array(
+      'methods' => 'POST',
+      'callback' => 'add_to_my_drinks',
+    ) );
+}
+
+function get_my_drinks_num() {
+    global $wpdb;
+    $wpdb->get_results(" SELECT * FROM " . $wpdb->prefix . "mydrinks");
+    return $wpdb->num_rows;
+}
+
+function get_my_drinks_num_route() {
+    register_rest_route( 'vuewithbundler/v1', '/mydrinksare', array(
+      'methods' => 'GET',
+      'callback' => 'get_my_drinks_num',
+    ) );
+}
+
+function get_my_drink_recipes() {
+    global $wpdb;
+    $mydrinks = $wpdb->get_results(" SELECT * FROM " . $wpdb->prefix . "mydrinks");
+    return $mydrinks;
+}
+
+function get_my_drink_recipes_route() {
+    register_rest_route( 'vuewithbundler/v1', '/alldrinks', array(
+      'methods' => 'GET',
+      'callback' => 'get_my_drink_recipes',
+    ) );
+}
+
+function delete_my_drink(WP_REST_Request $request_data) {
+    global $wpdb;
+    $id = $request_data['drinkId'];
+    $table_name = $wpdb->prefix . "mydrinks";
+    $wpdb->delete($table_name, ['drink_id' => $id]);
+    //$wpdb->get_results(" DELETE FROM "  . $wpdb->prefix . " WHERE `wp_myrecipes`.`recipe_id` = " . $id);
+    echo "Id is " . $id;
+}
+
+function delete_my_drink_route() {
+    register_rest_route( 'vuewithbundler/v1', '/mydrink', array(
+      'methods' => 'POST',
+      'callback' => 'delete_my_drink',
+    ) );
+}
+
+add_action( 'rest_api_init',  'add_to_my_drinks_route');
+add_action( 'rest_api_init',  'get_my_drinks_num_route');
+add_action( 'rest_api_init',  'get_my_drink_recipes_route');
+add_action( 'rest_api_init',  'delete_my_drink_route');
+
+function get_terms_by_custom_post_type( $post_type, $taxonomy ){
+    $args = array( 'post_type' => $post_type);
+    $loop = new WP_Query( $args );
+    $postids = array();
+    // build an array of post IDs
+    while ( $loop->have_posts() ) : $loop->the_post();
+      array_push($postids, get_the_ID());
+    endwhile;
+    // get taxonomy values based on array of IDs
+    $regions = wp_get_object_terms( $postids,  $taxonomy );
+    return $regions;
+  }
+
+function get_terms_by_post_ids($postids) {
+    // get taxonomy values based on array of IDs
+    $tags_by_id = wp_get_object_terms( $postids,  'post_tag' );
+    return $tags_by_id;
+  }
 
 ?>

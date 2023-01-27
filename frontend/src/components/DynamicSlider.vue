@@ -9,6 +9,23 @@ export default {
         methods: {
             setTotalImages(images) {
                 this.totalImages = images;
+            },
+            nextSlide() {
+                if (this.activeImage >= this.totalImages - 1) {
+                    this.activeImage = 0;
+                    return;
+                }
+                this.activeImage++;
+            },
+            prevSlide() {
+                if (this.activeImage == 0) {
+                    this.activeImage = this.totalImages - 1;
+                    return;
+                }
+                this.activeImage--;
+            },
+            setActiveImage(number) {
+                this.activeImage = number;
             }
         },
         mounted() {
@@ -18,13 +35,13 @@ export default {
                     return;
                 }
                 this.activeImage++;
-            }, 3000);
+            }, 5000);
         }
 }
 </script>
 
 <template>
     <div>
-        <slot :activeImage="activeImage" :setTotalImages="setTotalImages"></slot>
+        <slot :activeImage="activeImage" :setTotalImages="setTotalImages" :nextSlide="nextSlide" :prevSlide="prevSlide" :setActiveImage="setActiveImage"></slot>
     </div>
 </template>
