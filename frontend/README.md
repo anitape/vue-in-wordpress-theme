@@ -45,7 +45,7 @@ module.exports = defineConfig({
 
 ## 3. Build the Vue project
 
-To generate physical build files that you have to connect to your WordPress theme, you need to run the command below. By running this command Vue generates inside the Vue project <b><i>dist</i></b> folder that will include the physical files.
+To generate physical build files that you have to connect to your WordPress theme, you need to run the command below. By running this command, Vue generates inside the Vue project <b><i>dist</i></b> folder that will include the physical files.
 
 ```
 npm run build
@@ -129,7 +129,7 @@ If you are using Vue 3, you have to use <a href="https://vuejs.org/guide/compone
 </template>
 ```
 ## 7. Receiving data from Vue components
-To receive data from a Vue component, you need to define the mounting DOM element by adding <i>app</i> id. Inside that element you will need to use kebab-case and explicit closing tags for Vue components. To pass slot props use v-slot directive directly on the Vue component tag. Put all data you want to receive from the Vue component to v-slot directive.
+To receive data from a Vue component, you need to define the mounting DOM element by adding <i>app</i> id. Inside that element you will need to use kebab-case and explicit closing tags for Vue components. To pass slot props, use v-slot directive directly on the Vue component tag. Put all data you want to receive from the Vue component to v-slot directive.
 
 ```
 <div id="app">
