@@ -22,3 +22,5 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+Splitting the code into multiple (.Vue) files with single-file components will require the use of development tools like Vue Loader, Webpack, Babel etc.
