@@ -86,7 +86,7 @@ add_action('wp_enqueue_scripts', 'essential_scripts');
 
 ## 5. Informing Vue about the Mount Point in WordPress
 
-Finally, to load the Vue project in WordPress, you need to tell Vue where to mount itself. This is done by specifying the WordPress DOM element in <b><i>main.js</b></i> file of your Vue project. The following example allows to use reusable Vue components in DOM elements that id is <i>app</i>.
+Finally, to load the Vue project in WordPress, you need to tell Vue where to mount itself. This can be done by specifying the WordPress DOM element in <b><i>main.js</b></i> file of your Vue project. The following example allows to use reusable Vue components in DOM elements whose id is <i>app</i>.
 
 ```
 import { createApp } from 'vue/dist/vue.esm-bundler';
