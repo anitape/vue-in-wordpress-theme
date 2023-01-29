@@ -102,7 +102,7 @@ document.querySelectorAll('#app').forEach((el) => {
 });
 ```
 
-## 6. Sending Vue data and functionalities from Vue component
+## 6. Sending Vue data and functionalities from Vue components
 If you are using Vue 3, you have to use <a href="https://vuejs.org/guide/components/slots.html#scoped-slots">Scoped Slots</a> to send data from Vue components to WordPress. The example below shows how to send data to WordPress via Vue component template by using Scoped Slots.
 
 
@@ -168,7 +168,7 @@ document.querySelectorAll('#app').forEach((el) => {
   }).use(store).mount(el);
 });
 ```
-Vuex generates to <i><b>src</b></i> folder a new folder, which name is <i><b>store</b></i>, with <i><b>index.js</b></i> file. The content of <i><b>index.js</b></i> file looks similiar to the example presented below.
+Vuex generates to <i><b>src</b></i> folder a new folder, the name of which is <i><b>store</b></i>, with <i><b>index.js</b></i> file. The content of <i><b>index.js</b></i> file looks similiar to the example presented below.
 
 ```
 import { createStore } from "vuex";
