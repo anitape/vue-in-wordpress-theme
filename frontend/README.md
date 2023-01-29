@@ -18,7 +18,7 @@ vue create vue-project
 
 ## 2. Vue configurations
 
-To make Vue work properly inside your WordPress theme, you need to add the following configurations to vue.config.js file.
+To make Vue work properly inside your WordPress theme, you need to add the following configurations to <b><i>vue.config.js</b></i> file.
 
 ```
 const { defineConfig } = require('@vue/cli-service')
