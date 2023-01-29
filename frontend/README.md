@@ -1,6 +1,6 @@
 # Setting up a Vue app inside a WordPress theme
 
-Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses <b>the Vue CLI</b> for this purpose. See [Configuration Reference](https://cli.vuejs.org/config/). The Vue app in this WordPress theme is build with <b>Vue 3</b>.
+Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses <b>the Vue CLI</b> for this purpose. See <a href="https://cli.vuejs.org/config/" target="_blank">Configuration Reference</a>. The Vue app in this WordPress theme is build with <b>Vue 3</b>.
 
 ## 1. Install Node.js, Vue CLI and the Vue project
 
@@ -103,7 +103,7 @@ document.querySelectorAll('#app').forEach((el) => {
 ```
 
 ## 6. Sending Vue data and functionalities from Vue components
-If you are using <b>Vue 3</b>, you have to use <a href="https://vuejs.org/guide/components/slots.html#scoped-slots">Scoped Slots</a> to send data from Vue components to WordPress. The example below shows how to send data to WordPress via Vue component template by using Scoped Slots.
+If you are using <b>Vue 3</b>, you have to use <a href="https://vuejs.org/guide/components/slots.html#scoped-slots" target="_blank">Scoped Slots</a> to send data from Vue components to WordPress. The example below shows how to send data to WordPress via Vue component template by using <b>Scoped Slots</b>.
 
 
 ```
