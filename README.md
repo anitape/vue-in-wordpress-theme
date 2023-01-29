@@ -1,7 +1,7 @@
 <img src="frontend/public/aliette-main.png"/>
 
 # Developing a WordPress Theme with Vue.js
-The purpose of this project was to create a WordPress theme using the WordPress REST API and Vue.js. This WordPress theme uses Vue 3 with Vue CLI bundler, which allows to create .vue files inside a WordPress theme. More technical information about how to set up the Vue app inside WordPress you can find in the <a href="/frontend#readme">README file</a> of the frontend folder. This WordPress theme is built using also Bootstrap 4. 
+The purpose of this project was to create a WordPress theme using the WordPress REST API and Vue.js. This WordPress theme uses Vue 3 with Vue CLI bundler, which allows to create .vue files inside a WordPress theme. More technical information about how to set up the Vue app inside WordPress you can find in the <a href="/frontend#readme">README file</a> of the frontend folder. This WordPress theme is built using Bootstrap 4 as well. 
 
 Vue can bring a lot of different functionalities and features. By using Vue in a WordPress theme, you can combine best in-built WordPress features with dynamic Vue functionalities and make your WordPress website more interactive and modern. You can utilize in your WordPress theme Vue’s features such as single-file components, custom events, computed properties, lifecycle hooks, Vuex, as well as Axios to interact with the WordPress REST API. Vue takes your WordPress website to another level and helps to meet changing needs and expectations of today’s users.
 
