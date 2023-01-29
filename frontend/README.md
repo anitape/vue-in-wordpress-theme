@@ -1,6 +1,6 @@
 # Setting up a Vue app inside a WordPress theme
 
-Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses Vue CLI for this purpose. See [Configuration Reference](https://cli.vuejs.org/config/). The Vue app in the WordPress theme is build with Vue 3.
+Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses the Vue CLI for this purpose. See [Configuration Reference](https://cli.vuejs.org/config/). The Vue app in the WordPress theme is build with Vue 3.
 
 ## 1. Install Node.js, Vue CLI and the Vue project
 
