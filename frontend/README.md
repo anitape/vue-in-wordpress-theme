@@ -1,10 +1,10 @@
 # Setting up a Vue app inside a WordPress theme
 
-Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses the Vue CLI for this purpose. See [Configuration Reference](https://cli.vuejs.org/config/). The Vue app in this WordPress theme is build with Vue 3.
+Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses <b>the Vue CLI</b> for this purpose. See [Configuration Reference](https://cli.vuejs.org/config/). The Vue app in this WordPress theme is build with <b>Vue 3</b>.
 
 ## 1. Install Node.js, Vue CLI and the Vue project
 
-To use the Vue CLI, you will require Node.js installed on your system. Then, you need to open your system’s terminal and install the Vue CLI globally by running the following command.
+To use <b>the Vue CLI</b>, you will require Node.js installed on your system. Then, you need to open your system’s terminal and install <b>the Vue CLI</b> globally by running the following command.
 
 ```
 npm install -g @vue/cli
@@ -103,7 +103,7 @@ document.querySelectorAll('#app').forEach((el) => {
 ```
 
 ## 6. Sending Vue data and functionalities from Vue components
-If you are using Vue 3, you have to use <a href="https://vuejs.org/guide/components/slots.html#scoped-slots">Scoped Slots</a> to send data from Vue components to WordPress. The example below shows how to send data to WordPress via Vue component template by using Scoped Slots.
+If you are using <b>Vue 3</b>, you have to use <a href="https://vuejs.org/guide/components/slots.html#scoped-slots">Scoped Slots</a> to send data from Vue components to WordPress. The example below shows how to send data to WordPress via Vue component template by using Scoped Slots.
 
 
 ```
@@ -148,7 +148,7 @@ npm run build
 ```
 
 ## Using Vuex in your WordPress theme
-To install Vuex, run the command below in your Vue project.
+To install <b>Vuex</b>, run the command below in your Vue project.
 ```
 npm install vuex@next --save
 ```
@@ -168,7 +168,7 @@ document.querySelectorAll('#app').forEach((el) => {
   }).use(store).mount(el);
 });
 ```
-Vuex generates to <i><b>src</b></i> folder a new folder, the name of which is <i><b>store</b></i>, with <i><b>index.js</b></i> file. The content of <i><b>index.js</b></i> file looks similiar to the example presented below.
+<b>Vuex</b> generates to <i><b>src</b></i> folder a new folder, the name of which is <i><b>store</b></i>, with <i><b>index.js</b></i> file. The content of <i><b>index.js</b></i> file looks similiar to the example presented below.
 
 ```
 import { createStore } from "vuex";
