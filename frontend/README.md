@@ -86,7 +86,7 @@ add_action('wp_enqueue_scripts', 'essential_scripts');
 
 ## 5. Informing Vue about the Mount Point in WordPress
 
-Finally, to load the Vue project in WordPress, you need to tell Vue where to mount itself. This can be done by specifying the WordPress DOM element in <b><i>main.js</b></i> file of your Vue project. The following example allows to use reusable Vue components in DOM elements whose id is <i>app</i>.
+Finally, to load the Vue project in WordPress, you need to tell Vue where to mount itself. This can be done by specifying the WordPress DOM element in <b><i>main.js</b></i> file of your Vue project. The following example allows to use reusable Vue components in DOM elements whose id is ```app```.
 
 ```
 import { createApp } from 'vue/dist/vue.esm-bundler';
@@ -129,7 +129,7 @@ If you are using <b>Vue 3</b>, you have to use <a href="https://vuejs.org/guide/
 </template>
 ```
 ## 7. Receiving data from Vue components
-To receive data from a Vue component, you need to define the mounting DOM element by adding <i>app</i> id. Inside that element you will need to use kebab-case and explicit closing tags for Vue components. To pass slot props, use v-slot directive directly on the Vue component tag. Put all data you want to receive from the Vue component to v-slot directive.
+To receive data from a Vue component, you need to define the mounting DOM element by adding ```app``` id. Inside that element you will need to use kebab-case and explicit closing tags for Vue components. To pass slot props, use ```v-slot``` directive directly on the Vue component tag. Put all data you want to receive from the Vue component to ```v-slot``` directive.
 
 ```
 <div id="app">
@@ -145,6 +145,11 @@ Everytime you create or delete Vue components or make new configurations to your
 
 ```
 npm run build
+```
+## Compiles and hot-reloads for development
+You can always run the following command in your Vue project to check if the Vue project is running properly.
+```
+npm run serve
 ```
 
 ## Using Vuex in your WordPress theme
@@ -168,7 +173,7 @@ document.querySelectorAll('#app').forEach((el) => {
   }).use(store).mount(el);
 });
 ```
-<b>Vuex</b> generates to <i><b>src</b></i> folder a new folder, the name of which is <i><b>store</b></i>, with <i><b>index.js</b></i> file. The content of <i><b>index.js</b></i> file looks similiar to the example presented below.
+<b>Vuex</b> generates to <i><b>src</b></i> folder a new folder, the name of which is <i><b>store</b></i>, with <i><b>index.js</b></i> file. Then, you can create a store to <i><b>index.js</b></i> file with ```createStore``` method as showed in the example presented below.
 
 ```
 import { createStore } from "vuex";
@@ -182,12 +187,86 @@ export const store = createStore({
     }
   });
 ```
+When using Vuex store data in a Vue component, you need to put ```store``` in front of the store data variable. It's possible to pass the store data to WordPress using Scoped Slots. Then, you need to use ```$store``` with the passing store data in ```slot``` element.
 
-## Compiles and hot-reloads for development
-You can always run the following command in your Vue project to check if the Vue project is running properly.
 ```
-npm run serve
+<script>
+import { store } from '../store/index';
+export default {
+    methods: {
+        increaseFunc() {
+            store.state.dataState1++;
+        },
+        booleanFunc() {
+            if(store.state.dataState2 == false) {
+                store.state.dataState2 == true;
+            } else {
+                store.state.dataState2 == false;
+            }
+        }
+    },
+};
+</script>
+
+<template>
+    <div>
+        <slot :dataState1="$store.state.dataState1" :increaseFunc="increaseFunc" :dataState2="$store.state.dataState2" :booleanFunc="booleanFunc"></slot>
+    </div>
+</template>
 ```
+
+
+## Using Axios with the WordPress custom REST API
+Install axios by using the following command.
+```
+npm install --save axios vue-axios
+```
+
+When using axios in a Vue component, use with axios methods <a href="https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/">WordPress custom REST API endpoints</a>. The following example illustrates ```get``` method that uses a WordPress custom REST API endpoint.
+
+```
+<script>
+import axios from 'axios';
+
+export default {
+    methods: {
+        getAllitems() {                
+                axios.get(`/wordpress/wp-json/wptheme/v1/customendpoint`)
+                .then((response) => {
+                    // Do something with response.data
+                    console.log(response.data);
+                })
+                .catch((error) => {
+                    console.log('There was an error '+ error);
+                })             
+            },
+    }
+}
+</script>
+```
+Create a WordPress custom REST API endpoint to <b><i>functions.php</i></b> file. The example presented below shows how to create a custom route with its own endpoint. The created endpoint has ```GET``` method which request all data from a WordPress data table.
+
+```
+<?php
+function get_all_items() {
+    global $wpdb;
+    $allitems = $wpdb->get_results(" SELECT * FROM " . $wpdb->prefix . "wptable");
+    return $allitems;
+}
+
+function get_all_items_route() {
+    register_rest_route( 'wptheme/v1', '/customendpoint', array(
+      'methods' => 'GET',
+      'callback' => 'get_all_items',
+    ) );
+}
+
+add_action( 'rest_api_init',  'get_all_items_route');
+?>
+```
+
+
+
 
 
 
