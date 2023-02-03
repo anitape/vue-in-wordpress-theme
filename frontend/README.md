@@ -246,7 +246,7 @@ export default {
 }
 </script>
 ```
-Create a WordPress custom REST API endpoint to <b><i>functions.php</i></b> file. The example presented below shows how to create a custom route with its own endpoint. The created endpoint has ```GET``` method that returns all data from selected WordPress data table.
+Create a WordPress custom REST API endpoint to <b><i>functions.php</i></b> file. The example presented below shows how to create a custom route with its own endpoint. The created endpoint has ```GET``` method that returns all data from a selected WordPress data table.
 
 ```
 <?php
