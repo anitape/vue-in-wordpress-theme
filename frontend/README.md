@@ -2,7 +2,7 @@
 
 Here you can find step-by-step instructions to set up a Vue app inside a WordPress theme. Additionally, the instruction includes information about how to use Vuex and Axios in a WordPress theme.
 
-Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses <b>the Vue CLI</b> for this purpose. See <a href="https://cli.vuejs.org/config/" target="_blank">Configuration Reference</a>. The Vue app in this WordPress theme is build with <b>Vue 3</b>. The app uses also <b>Vuex</b> and <b>Axios</b>. 
+Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses <b>the Vue CLI</b> for this purpose. See <a href="https://cli.vuejs.org/config/">Configuration Reference</a>. The Vue app in this WordPress theme is build with <b>Vue 3</b>. The app uses also <b>Vuex</b> and <b>Axios</b>. 
 
 ## 1. Install Node.js, Vue CLI and the Vue project
 
@@ -20,7 +20,7 @@ vue create vue-project
 
 ## 2. Vue configurations
 
-To make Vue work properly inside your WordPress theme, you need to add the following configurations to <b><i>vue.config.js</b></i> file. Use your Vue project app path with additional ```dist``` folder as ```publicPath```. This ```dist``` folder will be created automatically when you build your Vue app.
+To make Vue work properly inside your WordPress theme, you need to add the following configurations to <b><i>vue.config.js</i></b> file. Use your Vue project app path with additional <b><i>dist</i></b> folder as ```publicPath```. This <b><i>dist</i></b> folder will be created automatically when you build your Vue app.
 
 ```
 const { defineConfig } = require('@vue/cli-service')
@@ -105,7 +105,7 @@ document.querySelectorAll('#app').forEach((el) => {
 ```
 
 ## 6. Sending Vue data and functionalities from Vue components
-If you are using <b>Vue 3</b>, you have to use <a href="https://vuejs.org/guide/components/slots.html#scoped-slots" target="_blank">Scoped Slots</a> to send data from Vue components to WordPress. The example below shows how to send data to WordPress via Vue component template by using <b>Scoped Slots</b>.
+If you are using <b>Vue 3</b>, you have to use <a href="https://vuejs.org/guide/components/slots.html#scoped-slots">Scoped Slots</a> to send data from Vue components to WordPress. The example below shows how to send data to WordPress via Vue component template by using <b>Scoped Slots</b>.
 
 
 ```
