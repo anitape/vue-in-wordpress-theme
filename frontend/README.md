@@ -20,7 +20,7 @@ vue create vue-project
 
 ## 2. Vue configurations
 
-To make Vue work properly inside your WordPress theme, you need to add the following configurations to <b><i>vue.config.js</b></i> file.
+To make Vue work properly inside your WordPress theme, you need to add the following configurations to <b><i>vue.config.js</b></i> file. Use your Vue project app path with additional ```dist``` folder as ```publicPath```. This ```dist``` folder will be created automatically when you build your Vue app.
 
 ```
 const { defineConfig } = require('@vue/cli-service')
@@ -224,7 +224,7 @@ Install axios by using the following command.
 npm install --save axios vue-axios
 ```
 
-When using axios in a Vue component, use with axios methods <a href="https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/">WordPress custom REST API endpoints</a>. The following example illustrates ```get``` method that uses a WordPress custom REST API endpoint.
+When using axios in a Vue component, use <a href="https://developer.wordpress.org/rest-api/extending-the-rest-api/adding-custom-endpoints/">WordPress custom REST API endpoints</a> with axios methods. The following example illustrates ```get``` method that uses a WordPress custom REST API endpoint.
 
 ```
 <script>
