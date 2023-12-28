@@ -2,7 +2,21 @@
 
 Here you can find step-by-step instructions to set up a Vue app inside a WordPress theme. Additionally, the instruction includes information about how to use Vuex and Axios in a WordPress theme.
 
-Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses <b>the Vue CLI</b> for this purpose. See <a href="https://cli.vuejs.org/config/">Configuration Reference</a>. The Vue app in this WordPress theme is build with <b>Vue 3</b>. The app uses also <b>Vuex</b> and <b>Axios</b>. 
+Splitting the code into multiple .vue files with single-file components will require the use of development tools like Webpack, Parcel, Vue CLI or Vite. This project uses <b>the Vue CLI</b> for this purpose. See <a href="https://cli.vuejs.org/config/">Configuration Reference</a>. The Vue app in this WordPress theme is build with <b>Vue 3</b>. The app uses also <b>Vuex</b> and <b>Axios</b>.
+
+<b>Table of contents</b>
+
+- [1. Install Node.js, Vue CLI and the Vue project](#1-install-nodejs-vue-cli-and-the-vue-project)
+- [2. Vue configurations](#2-vue-configurations)
+- [3. Build the Vue project](#3-build-the-vue-project)
+- [4. Connect physical Vue files to your WordPress theme](#4-connect-physical-vue-files-to-your-wordpress-theme)
+- [5. Informing Vue about the Mount Point in WordPress](#5-informing-vue-about-the-mount-point-in-wordpress)
+- [6. Sending Vue data and functionalities from Vue components](#6-sending-vue-data-and-functionalities-from-vue-components)
+- [7. Receiving data from Vue components](#7-receiving-data-from-vue-components)
+- [8. Build your Vue project again](#8-build-your-vue-project-again)
+- [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
+- [Using Vuex in your WordPress theme](#table-of-contents)
+- [Using Axios with the WordPress custom REST API](#using-axios-with-the-wordpress-custom-rest-api)
 
 ## 1. Install Node.js, Vue CLI and the Vue project
 
