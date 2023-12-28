@@ -15,7 +15,7 @@ Splitting the code into multiple .vue files with single-file components will req
 - [7. Receiving data from Vue components](#7-receiving-data-from-vue-components)
 - [8. Build your Vue project again](#8-build-your-vue-project-again)
 - [Compiles and hot-reloads for development](#compiles-and-hot-reloads-for-development)
-- [Using Vuex in your WordPress theme](#table-of-contents)
+- [Using Vuex in your WordPress theme](#using-vuex-in-your-wordpress-theme)
 - [Using Axios with the WordPress custom REST API](#using-axios-with-the-wordpress-custom-rest-api)
 
 ## 1. Install Node.js, Vue CLI and the Vue project
